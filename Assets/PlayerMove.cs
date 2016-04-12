@@ -33,7 +33,6 @@ public class PlayerMove : MonoBehaviour {
             Vector3 target = hitInfo.point;
             target.y = transform.position.y;
             transform.LookAt(target);
-
         }
 
         //控制动画
