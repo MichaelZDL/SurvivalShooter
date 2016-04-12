@@ -11,7 +11,7 @@ public class FllowTarget : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         Vector3 targetPos = player.position + new Vector3(0, 6, -8);
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothing * Time.deltaTime);
 	}
