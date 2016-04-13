@@ -36,7 +36,7 @@ public class PlayerShoot : MonoBehaviour {
             lineRenderer.SetPosition(1, hitInfo.point);
             //判断当前的射击有没有碰撞到敌人
             if (hitInfo.collider.tag == Tags.Enemy) {
-                hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(Attack);
+                hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(Attack,hitInfo.point);
             }
         } else {
             lineRenderer.SetPosition(1, transform.position + transform.forward * 100);
