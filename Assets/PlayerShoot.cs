@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour {
 
     public float shootRate = 2;
+    public float Attack = 30;
     private float timer = 0;
     private Light light;
     private ParticleSystem particleSys;
@@ -33,6 +34,10 @@ public class PlayerShoot : MonoBehaviour {
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo)) {
             lineRenderer.SetPosition(1, hitInfo.point);
+            //判断当前的射击有没有碰撞到敌人
+            if (hitInfo.collider.tag == Tags.Enemy) {
+                hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(Attack);
+            }
         } else {
             lineRenderer.SetPosition(1, transform.position + transform.forward * 100);
         }
