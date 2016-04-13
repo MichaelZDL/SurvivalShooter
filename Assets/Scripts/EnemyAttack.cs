@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
 
-    private float attack = 5;
+    public float attack = 5;
     public float timePerAttack = 1;
     private float timer;
     void Start() {

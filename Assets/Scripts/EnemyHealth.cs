@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour {
 
         if (hp <= 0) {
             transform.Translate(Vector3.down * Time.deltaTime * 0.05f);
-            if (transform.position.y <= -0.8f) {
+            if (transform.position.y <= -2.17f) {
                 
                 Destroy(this.gameObject);
             }
